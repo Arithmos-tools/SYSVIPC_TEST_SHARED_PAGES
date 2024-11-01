@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main  
+  pull_request:  
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  
+
+    steps:
+      - name: ソースコードを確認
+        uses: actions/checkout@v2 
+
+      - name: ソフトをインストール
+        run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential
+        sudo apt-get install -y make
+
+      - name: コンパイルする
+        run: make
+  verify:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+
+    - name: 実行
+        run : |
+          ./制御/target
+          echo "exit_code=$?" >> $GITHUB_ENV
+
+
+      - name: コードを確認
+        run : |
+          if [ "${{ env.exit_code }}" -ne 0 ]; then
+            exit 1
+          else
+            exit 0
+          fi
