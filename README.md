@@ -1,7 +1,11 @@
 # Linux V6.11 System V Shared pages test
 
 ![CI](https://github.com/Arithmos-tools/SYSVIPC_TEST_SHARED_PAGES/actions/workflows/ci.yml/badge.svg)
-
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Arithmos-tools_SYSVIPC_TEST_SHARED_PAGES&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Arithmos-tools_SYSVIPC_TEST_SHARED_PAGES)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=Arithmos-tools_SYSVIPC_TEST_SHARED_PAGES&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=Arithmos-tools_SYSVIPC_TEST_SHARED_PAGES)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Arithmos-tools_SYSVIPC_TEST_SHARED_PAGES&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=Arithmos-tools_SYSVIPC_TEST_SHARED_PAGES)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Arithmos-tools_SYSVIPC_TEST_SHARED_PAGES&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=Arithmos-tools_SYSVIPC_TEST_SHARED_PAGES)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=Arithmos-tools_SYSVIPC_TEST_SHARED_PAGES&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=Arithmos-tools_SYSVIPC_TEST_SHARED_PAGES)
 このプロジェクトは、MCUの共有ページのテストです。目的は、9つのプロセス間で行われる行列の乗算を実行し、これらのプロセスが同じメモリ空間で作業することです。このメモリ空間は、別のプロセスによって事前に作成されます。計算プロセスはそれぞれ、親プロセスに信号を送信します。この信号はカウンターをインクリメントし、カウンターが9に達すると計算が完了したことを示します。計算プロセスには、結果行列の特定のセルを処理するための整数がパラメータとして渡されます。
 
 ## 重要なシステムコール
