@@ -28,11 +28,11 @@ jobs:
     steps:
 
     - name: 実行
-        run : ./制御/target; echo "exit_code=$?" >> $GITHUB_ENV
+      run: ./制御/target; echo "exit_code=$?" >> $GITHUB_ENV
 
 
-      - name: コードを確認
-        run : |
+    - name: コードを確認
+      run: |
           if [ "${{ env.exit_code }}" -ne 0 ]; then
             exit 1
           else
